@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -x
+
+#read pid cmd state ppid pgrp session tty_nr tpgid rest < /proc/self/stat
+#trap "ps aux; kill -SIGTERM -$pgrp; exit" EXIT TERM KILL SIGKILL SIGTERM SIGQUIT
+
+tmux new-session -d -s remote /root/command
+
+supervisord -n
