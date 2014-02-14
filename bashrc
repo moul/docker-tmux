@@ -4,7 +4,7 @@ then
     sleep 1
     (
         (
-            tmux has-session -t remote && tmux attach-session -t remote
+            tmux has-session -t remote && tmux attach-session -t remote $@
         ) || (
             tmux new-session -s remote /root/command
         )

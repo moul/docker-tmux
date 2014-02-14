@@ -7,4 +7,8 @@ set -x
 
 (sleep 1; tmux new-session -d -s remote /root/command) &
 
+if [ -x /usr/bin/boot-docker-tmux ]; then
+    /usr/bin/boot-docker-tmux
+fi
+
 supervisord -n
